@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "DocuMind",
+    "slug": "ai-chat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/my_icon.jpg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/my_icon.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/my_icon.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.ctpejlok.aichat"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9e7e308a-795d-4e2a-b225-4bd85562745d"
+      }
+    },
+    "owner": "ctpejlok"
+  }
+}
