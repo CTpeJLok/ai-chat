@@ -83,7 +83,7 @@ const OrganizationsScreen = ({ navigation }) => {
                 <Text style={cn('text-black text-lg')}>{i.item.name}</Text>
               </View>
 
-              {i.item.id != organization.id && <Check size={20} />}
+              {i.item.id != organization?.id && <Check size={20} />}
             </TouchableOpacity>
           )}
         />
