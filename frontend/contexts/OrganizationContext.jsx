@@ -13,7 +13,6 @@ export const OrganizationProvider = ({ children }) => {
       const response = await fetch(`${API_URL}/organization/`)
       const data = await response.json()
       setOrganizations(() => data)
-      setOrganization(() => data[0])
     } catch (error) {
       console.error(error)
     }
