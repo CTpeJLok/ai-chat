@@ -163,9 +163,13 @@ const ChatScreen = () => {
         {organization && chats.length > 0 && (
           <View style={cn('flex-1 w-full p-2 flex flex-col items-stretch')}>
             <View
-              style={cn(
-                'bg-blue-600 p-4 rounded-t-xl flex flex-row items-center justify-between'
-              )}>
+              style={[
+                cn(
+                  'bg-blue-600 p-4 rounded-t-xl flex flex-row items-center justify-between'
+                ),
+                { elevation: 5 },
+                { boxShadow: '0 4px 6px rgba(0,0,0,0.25)' },
+              ]}>
               <TouchableOpacity
                 style={cn('text-white')}
                 onPress={() => setIsShowSelectChat((old) => !old)}>
@@ -195,9 +199,13 @@ const ChatScreen = () => {
 
             {isShowSelectChat && (
               <View
-                style={cn(
-                  'bg-white p-2 flex-1 h-0 rounded-b-xl flex flex-col items-stretch gap-2'
-                )}>
+                style={[
+                  cn(
+                    'bg-white p-2 flex-1 h-0 rounded-b-xl flex flex-col items-stretch gap-2'
+                  ),
+                  { elevation: 5 },
+                  { boxShadow: '0 4px 6px rgba(0,0,0,0.25)' },
+                ]}>
                 <Text style={cn('text-center text-xl')}>Выберите чат</Text>
 
                 <FlatList
@@ -208,10 +216,14 @@ const ChatScreen = () => {
                   )}
                   renderItem={(i) => (
                     <TouchableOpacity
-                      style={cn(
-                        'flex flex-row items-center justify-between gap-2',
-                        'border border-blue-600 p-2 rounded-xl text-black'
-                      )}
+                      style={[
+                        cn(
+                          'flex flex-row items-center justify-between gap-2',
+                          'border border-blue-600 p-2 rounded-xl text-black'
+                        ),
+                        { elevation: 5 },
+                        { boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
+                      ]}
                       onPress={() => {
                         setChat(() => i.item)
                         setIsShowSelectChat(() => false)
@@ -236,13 +248,20 @@ const ChatScreen = () => {
                   inverted
                   data={messages}
                   keyExtractor={(i) => i.id}
-                  style={cn('bg-white p-2')}
+                  style={[
+                    cn('bg-white p-2'),
+                    {
+                      borderLeftWidth: 1,
+                      borderRightWidth: 1,
+                      borderColor: '#e2e8f0',
+                    },
+                  ]}
                   contentContainerStyle={cn('p-2')}
                   renderItem={(i) => (
                     <View
                       key={i.item.id}
                       style={cn(
-                        'flex flex-row items-end gap-2 mb-4 overflow-hidden',
+                        'flex flex-row items-end gap-2 mb-4',
                         i.item.role === 'user' && 'justify-end'
                       )}>
                       <View
@@ -253,13 +272,16 @@ const ChatScreen = () => {
                         {i.item.role === 'assistant' && <Bot size={20} />}
                       </View>
 
-                      <View
-                        style={cn('flex-1 w-0 overflow-hidden flex flex-row')}>
+                      <View style={cn('flex-1 w-0 flex flex-row')}>
                         <View
-                          style={cn(
-                            'max-w-full bg-gray-100 p-4 rounded-xl',
-                            i.item.role === 'user' && 'ml-auto'
-                          )}>
+                          style={[
+                            cn(
+                              'max-w-full bg-gray-100 p-4 rounded-xl',
+                              i.item.role === 'user' && 'ml-auto'
+                            ),
+                            { elevation: 5 },
+                            { boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
+                          ]}>
                           <Text
                             style={cn(
                               'text-base truncate',
@@ -282,9 +304,13 @@ const ChatScreen = () => {
                 />
 
                 <View
-                  style={cn(
-                    'bg-white p-2 rounded-b-xl border-t border-gray-200 flex flex-row items-stretch gap-2'
-                  )}>
+                  style={[
+                    cn(
+                      'bg-white p-2 rounded-b-xl border-t border-gray-200 flex flex-row items-stretch gap-2'
+                    ),
+                    { elevation: 5 },
+                    { boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
+                  ]}>
                   <TextInput
                     style={cn(
                       'border border-gray-200 rounded-xl py-1 px-2 flex-1 w-0 text-base'

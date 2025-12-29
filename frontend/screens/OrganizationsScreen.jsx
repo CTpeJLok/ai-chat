@@ -42,9 +42,13 @@ const OrganizationsScreen = ({ navigation }) => {
 
         <View style={cn('flex flex-row items-center gap-2 p-2')}>
           <TextInput
-            style={cn(
-              'bg-white border border-gray-200 rounded-xl py-1 px-2 flex-1 w-0 text-base'
-            )}
+            style={[
+              cn(
+                'bg-white border border-gray-200 rounded-xl py-1 px-2 flex-1 w-0 text-base'
+              ),
+              { elevation: 5 },
+              { boxShadow: '0 4px 6px rgba(0,0,0,0.25)' },
+            ]}
             value={newName}
             onChangeText={setNewName}
             onKeyPress={(nativeEvent) => {
@@ -63,10 +67,14 @@ const OrganizationsScreen = ({ navigation }) => {
           contentContainerStyle={cn('flex flex-col items-stretch gap-2 p-2')}
           renderItem={(i) => (
             <TouchableOpacity
-              style={cn(
-                'flex flex-row items-center justify-between gap-2',
-                'border border-blue-600 p-2 rounded-xl text-black'
-              )}
+              style={[
+                cn(
+                  'flex flex-row items-center justify-between gap-2',
+                  'border border-blue-600 p-2 rounded-xl text-black bg-white'
+                ),
+                { elevation: 5 },
+                { boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
+              ]}
               onPress={() => {
                 setOrganization(() => i.item)
                 navigation.navigate('Chat')

@@ -1,7 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
+import { useEffect, useState } from 'react'
 import tw from 'twrnc'
 import { Building2, File, MessageCircle } from './components/Icon'
+import SplashScreen from './components/SplashScreen'
 import { OrganizationProvider } from './contexts/OrganizationContext'
 import ChatScreen from './screens/ChatScreen'
 import DocumentsScreen from './screens/DocumentsScreen'
@@ -10,6 +12,17 @@ import OrganizationsScreen from './screens/OrganizationsScreen'
 const Tab = createBottomTabNavigator()
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 3500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (showSplash) {
+    return <SplashScreen />
+  }
+
   return (
     <OrganizationProvider>
       <NavigationContainer>

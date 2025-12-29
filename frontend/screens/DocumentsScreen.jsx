@@ -112,10 +112,14 @@ const DocumentsScreen = () => {
               )}
               renderItem={(i) => (
                 <View
-                  style={cn(
-                    'border border-blue-600 rounded-xl p-2',
-                    'flex flex-col items-stretch justify-between gap-2'
-                  )}>
+                  style={[
+                    cn(
+                      'border border-blue-600 rounded-xl p-2 bg-white',
+                      'flex flex-col items-stretch justify-between gap-2'
+                    ),
+                    { elevation: 5 },
+                    { boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
+                  ]}>
                   <View style={cn('flex flex-col items-stretch')}>
                     <Text style={cn('text-lg')}>Название: {i.item.name}</Text>
                     <Text style={cn('text-base')}>
